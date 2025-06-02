@@ -6,4 +6,5 @@ summarizer = pipeline("summarization")
 def summarize(text):
     return summarizer(text)[0]['summary_text']
 
-gr.Interface(fn=summarize, inputs="textbox", outputs="textbox").launch()
+demo = gr.Interface(fn=summarize, inputs="textbox", outputs="textbox")
+demo.launch()
